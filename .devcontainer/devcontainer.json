@@ -5,24 +5,22 @@
   // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
   "image": "mcr.microsoft.com/devcontainers/typescript-node:1-20-bullseye",
 
-  "runArgs": ["--network=openhexa"],
-  
   "containerEnv": {
     "FALLBACK_URL": "https://api.demo.openhexa.org/",
     "GRAPHQL_ENDPOINT": "https://api.demo.openhexa.org/graphql/"
   },
-  
+
   // Features to add to the dev container. More info: https://containers.dev/features.
   "features": {
-    "ghcr.io/devcontainers/features/git:1": "1.1.5"
+    "ghcr.io/devcontainers/features/git:1": "os-provided"
   },
 
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   "forwardPorts": [3000],
 
   // Use 'postCreateCommand' to run commands after the container is created.
-  "postCreateCommand": "npm install",
-  "postAttachCommand": "npm run dev"
+  "postCreateCommand": "npm install"
+  // "postAttachCommand": "npm run dev"
 
   // Configure tool-specific properties.
   // "customizations": {},
